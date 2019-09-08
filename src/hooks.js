@@ -7,7 +7,7 @@ export const useFetch = (url, initialValue) => {
     fetch(url)
       .then(response => response.json())
       .then(json => setResult(json));
-  }, []);
+  }, [url]);
 
   return result;
 }
@@ -24,6 +24,6 @@ export const useDynamicTransition = ({ increment, delay, length }) => {
     }, delay);
 
     return () => clearInterval(interval);
-  }, [delay, increment]);
+  }, [delay, increment, length]);
   return index;
 }
